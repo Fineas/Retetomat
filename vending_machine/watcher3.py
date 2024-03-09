@@ -6,14 +6,14 @@ import time
 url = 'https://sui-testnet.mystenlabs.com/graphql'
 
 # event type
-package_id = "0x99b505d0e75a8e82bb1819bbd01115586f9a2c0ec35a0d311010d877eaf6157b"
-package_name = "version3"
+package_id = "0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef"
+package_name = "version4"
 event_name1 = "RetetaMinted"
 event_name2 = "RetetaBurned"
 
 # emitting module
-package_id2 = "0x01075e1e8916ff6a4c807556ad914477c2b37b6f90209267c4b4a37de10b4178"
-package_name2 = "versionB"
+package_id2 = "0x1ddf75d66e2609dc451cd35c34ebc14618ceb58183da71611506e8903cee7ddb"
+package_name2 = "versionC"
 
 output_folder = "/home/bpreda/vending_machine"
 output_file = "order.json"
