@@ -1,0 +1,3 @@
+mkcert 192.168.122.288 0.0.0.0 localhost 127.0.0.1 ::1
+
+HOST=192.168.221.147 HTTPS=true SSL_CRT_FILE=./192.168.221.147+4.pem SSL_KEY_FILE=./192.168.221.147+4-key.pem npm start
