@@ -1,0 +1,29 @@
+---
+compiled_package_info:
+  package_name: vending_machine
+  address_alias_instantiation:
+    retetomat: 32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef
+    std: "0000000000000000000000000000000000000000000000000000000000000001"
+    sui: "0000000000000000000000000000000000000000000000000000000000000002"
+    vending_machine: "0000000000000000000000000000000000000000000000000000000000000000"
+  source_digest: 255B42A89775A41EC7695CFF7D84B922964B2F8ADFF00CC8F06CAA5A92AE7A11
+  build_flags:
+    dev_mode: false
+    test_mode: false
+    generate_docs: false
+    install_dir: ~
+    force_recompilation: false
+    lock_file: "./Move.lock"
+    fetch_deps_only: false
+    skip_fetch_latest_git_deps: false
+    default_flavor: sui
+    default_edition: ~
+    deps_as_root: false
+    silence_warnings: false
+    warnings_are_errors: false
+    additional_named_addresses: {}
+    no_lint: false
+dependencies:
+  - MoveStdlib
+  - Sui
+  - retetomat
