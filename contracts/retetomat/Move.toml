@@ -1,0 +1,15 @@
+[package]
+name = "retetomat"
+published-at = "0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef" # testnet
+license = "MIT"           # e.g., "MIT", "GPL", "Apache 2.0"
+authors = ["Fineas Silaghi (fineas.silaghi@gmail.com)"]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
+
+# edition = "2024.alpha" # To use the Move 2024 edition, currently in alpha
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
+[addresses]
+retetomat = "0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef"
+# retetomat = "0x0"
+
