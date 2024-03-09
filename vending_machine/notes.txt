@@ -1,0 +1,33 @@
+reteromat address = 0x9a219ab86060165c5b290d6218bd42daa86ea85edd9decd81f352412e13647c3
+
+deploy contract:
+sui client publish --gas-budget 1000000000 .    
+
+retetomat package_id = 0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef
+package_name = version4
+event_name1 = RetetaMinted
+event_name2 = RetetaBurned
+
+WhiteList = 0xdc9a70531293197dd7972a5146b590d3d3bd4dbb382a2e03da2e230131de880d
+
+add doctor:
+sui client call --package 0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef --module version4 --function add_doc --args 0xdc9a70531293197dd7972a5146b590d3d3bd4dbb382a2e03da2e230131de880d 0xec041d53ec1cb60e29d3e0e569d93211fe3cb7ed129aed38aa106eb348b3d3bd --gas-budget 1000000000
+
+
+mint nft:
+sui client call --package 0x32bf46572bc1f2e341a3bd09d06dfc11934f72edc5458f88fdb175656c5159ef --module version4 --function mint --args 0xdc9a70531293197dd7972a5146b590d3d3bd4dbb382a2e03da2e230131de880d 0x926e99a891e95dffcab7a692f5b7adf6d12cb70ce4b2946f093b3f53c3b356e4 "Bogdan Preda" "Pentru durere in gat" 123 "08.03.2024" "[\"paracetamol\",\"solfadeina\"]" "https://imgur.com/a/jIXAakQ" --gas-budget 100000000
+
+NFT (example) address:
+0xff1c7b4482ae951a463a53c339b6ce026d7a88aff65abfd117dfe96afc6fff0c
+
+
+deploy vm contract:
+sui client publish --skip-dependency-verification --gas-budget 1000000000 .
+
+vm package_id = 0x1ddf75d66e2609dc451cd35c34ebc14618ceb58183da71611506e8903cee7ddb
+package_name = versionC
+
+
+
+burn nft:
+sui client call --package 0x1ddf75d66e2609dc451cd35c34ebc14618ceb58183da71611506e8903cee7ddb --module versionC --function redeem --args 0x73e479835c96160b949fa89d96b20baf0f1fe810b6768583d37b32616682e9b7 0x14ad2094b63a44a51bb1a5f707e2a7d6c0720306d28660b339de782b95b2f8ec 0xdc9a70531293197dd7972a5146b590d3d3bd4dbb382a2e03da2e230131de880d  --gas-budget 100000000

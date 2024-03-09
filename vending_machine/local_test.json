@@ -1,0 +1,20 @@
+{
+    "sendingModule": {
+        "name": "versionA"
+    },
+    "type": {
+        "repr": "0x99b505d0e75a8e82bb1819bbd01115586f9a2c0ec35a0d311010d877eaf6157b::version3::RetetaBurned"
+    },
+    "sender": {
+        "address": "0x926e99a891e95dffcab7a692f5b7adf6d12cb70ce4b2946f093b3f53c3b356e4"
+    },
+    "timestamp": "2024-03-09T07:16:33.322Z",
+    "json": {
+        "items": [
+            "paracetamol",
+            "solfadeina"
+        ],
+        "burned_by": "0x926e99a891e95dffcab7a692f5b7adf6d12cb70ce4b2946f093b3f53c3b356e4"
+    },
+    "bcs": "AgtwYXJhY2V0YW1vbApzb2xmYWRlaW5hkm6ZqJHpXf/Kt6aS9bet9tEstwzkspRvCTs/U8OzVuQ="
+}
