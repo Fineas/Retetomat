@@ -1,0 +1,665 @@
+@font-face {
+  font-family: 'ShadowsIntoLight';
+  src: local('ShadowsIntoLight'),
+       url('./fonts/ShadowsIntoLight.ttf') format('ttf');
+}
+
+.title {
+  margin-bottom: 36px;
+  background-image: linear-gradient(to right bottom, #10c0f6, #c0c7ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 4em;
+}
+
+.gradient {
+  margin-bottom: 36px;
+  background-image: linear-gradient(to right bottom, #10c0f6, #c0c7ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.authPage {
+  text-align: center;
+  margin: 0 auto;
+  top: 20%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+ .patAuthPage {
+  text-align: center;
+  margin: 0 auto;
+  /* top: 35%; */
+  width: 10%;
+  max-width: 500px;
+  min-width: 250px;
+  margin-bottom: -3em;
+  /* position: fixed; */
+  /* opacity: 0.1; */
+  /* left: 0; */
+  /* right: 0; */
+  /* margin-top: -5%; */
+  /* top: 25%; */
+  z-index: -1;
+  /* vertical-align: middle; */
+}
+
+.wrapper {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #89B5DA; */
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .note {
+  width: 25rem;
+  height: 38rem;
+  background-color: #FEFDF8;
+  border: 0.6rem solid #1A6EB4;
+  position: absolute;
+  z-index: 1;
+}
+.wrapper .note .spiral-part {
+  height: 3rem;
+  background-color: #A1C5DE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .note .spiral-part .spiral .hole {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: #1A6EB4;
+  margin: 0 0.6rem;
+}
+.wrapper .note .spiral-part .spiral .wire {
+  width: 0.3rem;
+  height: 2.5rem;
+  background-color: #DFE6F1;
+  margin-top: -30px;
+  margin-left: 14px;
+  border-radius: 2px;
+}
+.wrapper .note .note-lines {
+  padding: 0.5rem;
+}
+.wrapper .note .note-lines .line {
+  height: 1.5rem;
+  border-bottom: 0.2rem solid #E7E6E2;
+  padding-top:10px;
+}
+.wrapper .shadow {
+  position: absolute;
+  width: 46.2rem;
+  height: 70rem;
+  background-color: #7BACD5;
+  transform: rotate(-59deg);
+  top: 133px;
+  right: -8px;
+}
+
+.notepad {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 500px;
+  min-width: 360px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.20);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.top {
+  width: 100%;
+  height: 50px;
+  background: #0080ff;
+  border-radius: 5px 5px 0 0;
+}
+
+.paper {
+  /* width: 100%; */
+  height: 100%;
+  min-height: 40vh;
+  padding: 1px 20px 35px 20px;
+  background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px);
+  font-family: ShadowsIntoLight;
+  line-height: 32px;
+  outline: 0;
+  font-size: 22px;
+  white-space: pre-wrap; /* CSS */
+}
+
+.redtxt {
+  color: red;
+}
+
+.mintBtn {
+  background-color: #10c0f6; /* SUI blockchain blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 130%;
+  margin-top: 7%;
+  margin-left: 2%;
+  transition: background-color 0.3s ease;
+}
+
+.dropBtn {
+  background-color: #f61010af; /* SUI blockchain blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 130%;
+  margin-top: 7%;
+  transition: background-color 0.3s ease;
+}
+
+.mintBtn:hover {
+  background-color: #0ca6d4; /* Darker shade for hover effect */
+}
+
+.dropBtn:hover {
+  background-color: #c10c0caf; /* Darker shade for hover effect */
+}
+
+.grid {
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+  width: 100%;
+}
+
+/* Common style
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+} */
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+figure {
+  width: 100%;
+}
+
+/*---------------*/
+/***** Sadie *****/
+/*---------------*/
+
+figure.effect-sadie figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 75%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 75%);
+	content: '';
+	opacity: 0;
+	-webkit-transform: translate3d(0,50%,0);
+	transform: translate3d(0,50%,0);
+}
+
+figure.effect-sadie h2 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	color: rgba(255, 255, 255, 0);
+	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
+	transition: transform 0.35s, color 0.35s;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+figure.effect-sadie h1 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	color: rgba(255, 255, 255, 0);
+	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
+	transition: transform 0.35s, color 0.35s;
+	-webkit-transform: translate3d(0,-40%,0);
+	transform: translate3d(0,-40%,0);
+}
+
+.sui-button {
+  background-color: #10c0f6; /* SUI blockchain blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 130%;
+  transition: background-color 0.3s ease;
+  margin-left: -10px;
+ }
+
+ .sui-button:hover {
+  background-color: #0c85aa; /* Darker shade for hover effect */
+ }
+
+figure.effect-sadie button {
+	position: absolute;
+	top: 53%;
+	/* left: 0; */
+  margin-left: -3%;
+  display: none;
+	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
+	transition: transform 0.35s, color 0.35s;
+	-webkit-transform: translate3d(0,-40%,0);
+	transform: translate3d(0,-40%,0);
+}
+
+figure.effect-sadie figcaption::before,
+figure.effect-sadie p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-sadie p {
+	position: absolute;
+	/* bottom: 0; */
+  top: 60%;
+	left: 0;
+	padding: 2em;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+figure.effect-sadie:hover h2 {
+	color: rgb(0, 0, 0);
+	-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+}
+
+figure.effect-sadie:hover h1 {
+	color: rgb(0, 0, 0);
+	-webkit-transform: translate3d(0,-40%,0) translate3d(0,-30px,0);
+	transform: translate3d(0,-54%,0) translate3d(0,-30px,0);
+}
+
+figure.effect-sadie:hover button {
+
+  /* cancel the display none, but without doing display block */
+  display: inline-block;
+	-webkit-transform: translate3d(0,-40%,0) translate3d(0,-30px,0);
+	transform: translate3d(0,-54%,0) translate3d(0,-30px,0);
+}
+
+figure.effect-sadie:hover figcaption::before ,
+figure.effect-sadie:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/* Existing CSS for navigationMenuStyle */
+.navigationMenuStyle {
+  width: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-y: scroll; 
+  max-height: 100vh; 
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  padding-left: 5%;
+  padding-right: 2%;
+}
+
+.navigationItem {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 75px;
+}
+
+.navigationItem:hover {
+  transform: scale(1.1) rotate(-10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.scrollableContentStyle {
+  width: 70%;
+  height: 100%; 
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+  text-align: center;
+}
+
+.fullScreenStyle {
+  width: 97% !important;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.leftContent {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+}
+
+
+.leftBoxStyle {
+  position: absolute;
+  top: 15%;
+  margin: 0 auto;
+  background-color: white;
+  padding-left: 3%;
+  border-radius: 10px;
+}
+
+.wholePage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.contentSection {
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fadingCircle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(0, 0, 255, 0) 50%, rgba(16, 192, 246, 1) 100%);
+  pointer-events: none; /* To allow interaction with elements underneath */
+  z-index: 2; /* To ensure it's on top of other elements */
+ }
+
+.scannerTitle {
+  position:fixed;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.scannerBtn {
+  position: fixed;
+  left: 0;
+  top: 7% !important;
+  right: 0;
+  z-index: 5;
+}
+
+.qrMatch {
+  position: fixed;
+  left: 0;
+  top: 20% !important;
+  right: 0;
+  z-index: 6;
+  margin: 0 auto;
+  width: 45%;
+  max-width: 40em;
+  opacity: 0.4;
+}
+
+.displayImage {
+  width: 50%;
+  height: auto;
+}
+
+/* Add this CSS inside your App.css file */
+@media (max-width: 1400px) {
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; /* Prevents scrolling on the body */
+    overflow-x: hidden;
+    /* background-color: grey; */
+    font-family: sans-serif;
+  }
+
+  .qrMatch {
+    top: 25% !important;
+  }
+
+  .navigationMenuStyle {
+    width: 100%; /* Take full width of the screen */
+    height: auto; /* Adjust height as needed */
+    flex-direction: row; /* Change flex direction to row for horizontal layout */
+    /* justify-content: center;  */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    top: 90%;
+    position: absolute; /* Make it stick to the bottom */
+    gap: 5px; /* Adjust gap between items for horizontal layout */
+    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-left: 0;
+  }
+  .fullScreenStyle {
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    width: 100%; /* Take full width of the viewport */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .leftContent, .scrollableContentStyle {
+    width: 100%; /* Each child takes full width */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .scrollableContentStyle {
+    width: 100%;
+  }
+
+  .leftContent {
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  .scrollableContentStyle {
+    width: 100%;
+  }
+
+  .leftBoxStyle {
+    width: 100%;
+    top: 5%;
+    position: static;
+  }
+
+  .contentSection {
+    height: auto;
+  }
+
+  .container img {
+    padding-top: 5%;
+    /* padding-bottom: 1%; */
+  }
+
+  .notepad{
+    max-width: 700px;
+  }
+
+  .paper {
+    min-height: 14vh;
+  }
+
+  .displayImage {
+    width: 60%;
+  }
+
+  figure.effect-sadie button {
+    margin-left: -4%;
+  }
+
+  .mintBtn {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .patAuthPage {
+    top: 30%;
+   }
+}
+
+.qr-reader {
+  width: 430px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.qr-reader video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qr-reader .qr-box {
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.qr-reader .qr-frame {
+  position: absolute;
+  fill: none;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 1000px) {
+  .qrMatch {
+    top: 30% !important;
+  }
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 750px) {
+  .qrMatch {
+    top: 35% !important;
+  }
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 426px) {
+  .qr-reader {
+    width: 100%;
+  }
+
+  .qrMatch {
+    top: 40% !important;
+  }
+
+  .scannerBtn {
+    top: 10% !important;
+  }
+}

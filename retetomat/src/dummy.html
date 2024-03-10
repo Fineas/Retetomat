@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full-Screen Div with Inner Scrollable Div</title>
+<style>
+  /* This ensures the body takes the full viewport without allowing scrolling */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling on the body */
+  }
+
+  /* Styles for the outer div that fits exactly to the screen */
+  .full-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensures no scrolling on the outer div */
+    display: flex; /* Centers the inner div */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Styles for the inner div with scrollable content */
+  .scrollable-content {
+    width: 80%; /* Adjust width as needed */
+    height: 90%; /* Adjust height as needed */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+
+  /* Hides the scrollbar for Webkit browsers like Chrome, Safari */
+  .scrollable-content::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="full-screen">
+    <h1>hahaha</h1>
+  <div class="scrollable-content">
+    <!-- Your scrollable content goes here -->
+    <p>Insert your content here. It can be long enough to require scrolling.</p>
+    <div className="container">
+        <div>
+          <img src="https://www.tylenol.com/sites/tylenol_us/files/styles/product_image/public/product-images/microsoftteams-image_1.png" />
+        </div>
+        <div>
+          <img src="https://goldplant.ro/wp-content/uploads/2021/11/sirop-tusin-200ml.png" />
+        </div>
+        <div>
+          <img src="http://placekitten.com/g/400/200" />
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
