@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retzetomat Autonomat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .sui-button {
+            background-color: #10c0f6; /* SUI blockchain blue */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 130%;
+            transition: background-color 0.3s ease;
+            margin-left: -10px;
+        }
+
+        .sui-button:hover {
+            background-color: #0c85aa; /* Darker shade for hover effect */
+        }
+        .gradient {
+            margin-bottom: 36px;
+            background-image: linear-gradient(to right bottom, #10c0f6, #c0c7ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 2em;
+        }
+        .notification {
+            display: none;
+            padding: 15px;
+            background-color: #f2f2f2;
+            color: #333;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification.show {
+            display: block;
+        }
+
+        .closebtn {
+            float: right;
+            cursor: pointer;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        #imageContainer {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #imageContainer img {
+            max-width: 100%;
+            max-height: 400px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: sans-serif;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+        }
+
+        div {
+            text-align: center; 
+        }
+        .content {
+            text-align: center; 
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute; 
+            top: 0; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+        #myDiv {
+            background-color: rgb(255, 255, 255);
+            display: block; 
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content" id="myDiv">
+        <img src="/static/img2.png" alt="Image" width="300" height="300">
+        <!-- <h1 class="gradient">Welcome to Rețetomat! </h1> -->
+        <h1 class="gradient">Cat ai zice pește, <br> REȚETOMAT te servește! </h2>
+        <!-- <h1>Primul retzetomat al viitorului.</h1> -->
+        <h2>Ai o rețetă ? Apasa butonul de mai jos!</h2>
+        <br>
+    </div>
+    <div>
+        <button class="sui-button" id="spinButton" onclick="hideMyDiv()">START</button>
+    </div>
+    <div id="imageContainer">
+        <img src="/static/img.png" alt="Image" width="450" height="450">
+    </div>
+    <div id="notification" class="notification">
+        Sănătate și numai bine!!!
+        <span class="closebtn" onclick="closeNotification()">&times;</span>
+    </div>
+
+    <script>
+        function showNotification() {
+            var notification = document.getElementById("notification");
+            notification.classList.add("show");
+            window.location = "http://127.0.0.1:5000/";
+           
+        }
+
+        function closeNotification() {
+            var notification = document.getElementById("notification");
+            notification.classList.remove("show");
+        }
+        const syncWait = ms => {
+            const end = Date.now() + ms
+            while (Date.now() < end) continue
+        }
+        $(document).ready(function() {
+            $('#spinButton').click(function() {
+                $('#spinButton').hide();
+                $('#imageContainer').show();
+                $.post('/spin-rotors', {}, function(data) {
+                    //alert(data.message);
+                    $('#imageContainer').hide();
+                    $('#spinButton').show();
+                    showNotification();
+                    
+                });
+
+                setTimeout(function() {
+                        window.location = "http://127.0.0.1:5000/";
+                    }, 30000);
+            });
+        });
+        function hideMyDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "none";
+        }
+        function showMyDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "static";
+        }
+    </script>
+
+</body>
+</html>
